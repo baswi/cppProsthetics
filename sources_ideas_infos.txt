@@ -1,0 +1,631 @@
+﻿** Aktuell favorisierte Artikel + Infos: **
+https://www.worldscientific.com/doi/pdf/10.1142/S0129065717500253
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5505040/
+
+https://openbionicslabs.com/
+https://github.com/Open-Bionics
+
+
+** muss noch gesichtet werden **
+robot-simulators:
+http://gazebosim.org/
+-----------------------------------------------------------------------------------------------------------------> ist wohl open source
+http://www.mujoco.org/
+-----------------------------------------------------------------------------------------------------------------> ist wohl proprietär + Kostet für vollen Zugriff
+
+
+http://www.uni-kassel.de/eecs/fileadmin/datas/fb16/Fachgebiete/NT/Diplom/Diplom2_Weitz.pdf
+-----------------------------------------------------------------------------------------------------------------> Diplomarbeit über: Messung und Analyse myoelektrischer Signale
+http://www.fh-wedel.de/~si/seminare/ss02/Ausarbeitung/9.digitalaudio/audio1.htm
+-----------------------------------------------------------------------------------------------------------------> Methoden der digitalen Audiobearbeitung (EMG sollte da dann an sich nicht zu weit weg sein?!?)
+
+
+**********************************************************************************************************************************
+**********************************************************************************************************************************
+**********************************************************************************************************************************
+
+http://scipol.duke.edu/content/brain-computer-interface-based-neuro-prosthetics
+-----------------------------------------------------------------------------------------------------------------> schöne Auflistung der unterschiedlichen Signalarten, mögliche Verwendungsarten und paar aktuellere Forschungen dazu
+
+
+https://ieeexplore.ieee.org/stamp/stamp.jsp?reload=true&arnumber=7386801
+
+Aside from brain signals, understanding
+and interpreting signals
+from end-organs, i.e., skeletal muscles
+(called electromyograms) enables
+the design of prosthetic devices
+that can be controlled by amputees,
+for example, by activating muscles in
+stumps. Recent advances in the characterization
+of human motor units
+from surface electromyograms, using
+blind source separation techniques
+to identify the discharge times of individual
+motor units, are summarized
+by Farina and Holobar [7].
+
+D. Farina and A. Holobar, “Characterization
+of human motor units from surface EMG
+decomposition,” Proc. IEEE, vol. 104, no. 2,
+Feb. 2016, DOI: 10.1109/
+JPROC.2015.2498665.
+
+
+
+Technologies and signal processing
+algorithms for recording and decoding
+for neural prostheses that exploit
+peripheral nerve signals and
+electrocorticograms (ECoG) to interpret
+human intent and control
+prosthetic arms are reviewed by
+Warren et al. [8].
+
+D. J. Warren et al., “Recording and
+decoding for neural prostheses,” Proc. IEEE,
+vol. 104, no. 2, Feb. 2016, DOI: 10.1109/
+JPROC.2015.2507180.
+
+
+
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4316207/
+
+Keywords: EMG velocity control, force control, human operator, human-operator bandwidth, 
+information transmission rate, myoelectric control, position control, prosthesis control, 
+tracking frequency, tracking task, velocity gain
+
+Typically, the user generates the command signal with myoelectric control, the application of force, 
+or a measurement of excursion of the body.
+
+Electromyogram (EMG), or myoelectric, control is by far the most common user interface for powered prostheses ...
+
+EMG also provides access to the muscle activation process and can provide a large amount of information about 
+the user’s intentions as he or she manipulates the muscles of the residual limb [4].
+[...]
+filtering properties of the limb tissue affect the surface myoelectric signal, and movement of the skin beneath 
+the electrode may cause a motion artifact that can be confused with the signal [2].
+-----------------------------------------------------------------------------------------------------------------> mögliche Problemstellung?
+
+
+Powered prostheses controlled directly by force use the proximal motion [...] force-sensing resistor touch pads 
+[...] can measure force without the use of cables. Control schemes are discussed in detail by Williams [5].
+
+[...] one must model the human-machine system in the context of how it affects user performance.                  // mehr als evtl kleiner Hint das stets zu bedenken, auch wenn nicht direkt relevant und hier auch etwas aus dem Zusammenhang gerissen
+
+
+The system can be concisely represented with a linear model of the human operator, as previously used to study 
+human-operator dynamics in manual control systems [6–11]. In this analysis, the closed-loop system is represented 
+by a linear transfer function and a generator of random noise, or “remnant,” which represents all output content 
+that cannot be explained by a linear operation on the input. The linear closed-loop transfer function provides 
+information about the system performance and may be used to compare multiple control interfaces, provided it 
+reasonably describes the data and the remnant is small.
+-----------------------------------------------------------------------------------------------------------------> Infos für mögliches Test-Setup (input)
+
+[...]
+Two single differential-surface EMG sensors (Bagnoli DE-2.1, Delsys; Boston, Massachusetts) were placed parallel 
+to the muscle fibers. The signals were amplified with a two-channel Delsys Bagnoli-2 signal conditioning unit with 
+a 20 to 450 Hz bandwidth and sent to a computer by way of a National Instruments card (PCI-6031E; Austin, Texas), 
+which performed the analog-to-digital conversion. After the subject’s forearm was secured in the experimental rig, 
+the subject performed a 3 s isometric maximum voluntary contraction (MVC) for both flexion and extension. We used 
+the MVC to normalize the magnitude of the EMG during proportional velocity control. The EMG signals were sampled 
+at 1,000 Hz, and any linear trend was removed from each incoming 50 ms of data. The mean absolute value of a 100 ms 
+window was calculated for each channel, and the windows were updated every 50 ms, a rate more than adequate for EMG 
+control [14].
+-----------------------------------------------------------------------------------------------------------------> two-channel Delsys Bagnoli-2 signal  |  analog-to-digital conversion  |  normalize the magnitude of the EMG  |  rates for EMG-control
+
+Information transmission rate, tracking error, and human-operator bandwidth -------------------------------------> was davon könnte positiv beeinflusst werden?
+
+[...]
+For both paradigms, force feedback was available from the flexor and extensor muscles and tendons. For the force 
+sensor, the amount of force applied could be directly sensed by way of mechanoreceptors in the skin of the hand. 
+In contrast, EMG is only a by-product of muscle force. A relationship still existed between the EMG signal 
+production and hand-skin force perception, but it was perhaps less direct than for the force interface. The 
+positioning of the electrodes on the skin affects the relative influence of specific muscles on the control signal.
+-----------------------------------------------------------------------------------------------------------------> verschiedene Quellen + signal-arten sinnvoll verbinden?
+
+[...]
+The efficacy of EMG as a control interface is a much-debated topic in the prosthetics field. As just discussed, 
+the muscle activation properties on which the signal depends are stochastic in nature. In addition, the EMG-force 
+relationship is not stationary because of issues such as fatigue.
+
+[...]
+In fact, the human-operator bandwidth at the highest gain was closer to that bandwidth computed for the position 
+control than to the bandwidth computed for the EMG in the original experiments. However, the tracking error also 
+increased with gain. These results demonstrate a trade-off between speed and accuracy in human tracking, which many 
+researchers have described [22–23].
+
+The information transmission rates, however, were not affected by the choice of controller gain. This insensitivity 
+to controller tuning demonstrates that the information transmission rate is a more comprehensive performance measure 
+than tracking error or human-operator bandwidth. [...] The use of low gains will result in slow and accurate 
+movements of a prosthesis. Increasing the gain will increase speed at the expense of accuracy
+
+
+
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2956305/
+
+Keywords: Electromyography, pattern recognition, prostheses, sensor fault detection
+
+[...]
+One of the challenges in using EMG pattern recognition methods originally designed for prosthetic arm control 
+(Englehart and Hudgins, 2003) is that the recorded EMG signals from lower limbs in each locomotion mode (class) 
+are time-varying (Huang et al., 2009), while the EMG signals collected during one type of constant force upper limb 
+movement (class) are stationary. To address this difficulty, a new phase-dependant pattern classification strategy 
+was designed (Huang et al., 2009). By assuming that the EMG signals in a short gait phase are quasi-stationary and 
+have a repeatable pattern for the same locomotion mode, we built one classifier, similar to the EMG pattern 
+recognition methods for upper limb prosthesis, for each defined gait phase. This dynamic pattern recognition 
+strategy allowed accurate classification of six locomotion modes when the input EMG signals were collected from the 
+gluteal and thigh muscles of able-bodied subjects and patients with long transfemoral amputations 
+(Huang et al., 2009).
+
+[...]
+Although EMG pattern classifiers previously designed for prosthetic arms or legs produced high accuracy for 
+identifying user intent in single-session experiments (Englehart and Hudgins, 2003; Micera et al., 1999; 
+Hudgins et al., 1993; Graupe et al., 1982; Huang et al., 2009), their robustness during long-term prosthesis use 
+has rarely been evaluated (Zecca et al., 2002). In EMG-controlled artificial arms, environmental noise, electrode 
+conductivity changes, sensor (electrode) location shifts, or loss of electrode contact were reported to cause 
+disturbances in recorded EMG signals and even damage to EMG electrodes 
+(Parker et al., 2006; Hargrove et al., 2007; Sensinger et al., 2009).
+[...]
+Since pattern recognition involves learning the muscle contraction patterns for intended movements and does not 
+accommodate changes in EMG signals, these disturbances threaten the stability of EMG pattern classification 
+performance and may even lead to system failure (Sensinger et al., 2009).
+-----------------------------------------------------------------------------------------------------------------> pattern recognition schon wieder am thema vorbei?
+
+[...]
+In this study, we aimed to improve the reliability of EMG pattern recognition by designing a robust EMG sensor 
+interface. An additional module, called a sensor fault detection (SFD) module, was placed between the EMG 
+electrodes and the pattern classifier. This module not only closely monitored the recordings from individual EMG 
+electrodes, but recovered the classification performance of the system when one or more signals were disturbed.
+
+[...]
+ transitions between locomotion modes were considered to occur in the gait phase 200 ms prior to the toe-off event. 
+The goal of the pattern classification system was to accurately identify the transitions from level walking to 
+stair ascent, from stair decent to level walking, and from level walking to stepping over an obstacle, and level 
+walking only (i.e. no transition).
+
+[...]
+The raw EMG data were band-pass filtered between 25 and 450 Hz by a digital, eighth-order Butterworth filter to 
+remove low-frequency motion artifacts and high-frequency noise. EMG data collected in the 200 ms immediately prior 
+to toe-off (PTO) during task transition steps were selected for analysis.
+-----------------------------------------------------------------------------------------------------------------> evtl. interessante Werte + eighth-order Butterworth filter
+
+Hence, there were a total of 3 analysis windows in each PTO phase. Four time-domain (TD) features (mean absolute 
+value, number of zero-crossings, waveform length, and number of slope sign changes (Hudgins et al., 1993)) of EMG 
+signals were extracted from each analysis window as f̄n, where n denotes the EMG channel number. A feature 
+vector (F̅) in one analysis window was then formulated as F̅= {f̄1, f̄2, f̄3,…f̄N}, where N denotes the total number of EMG 
+channels. Three feature vectors were extracted from the EMG signals in one PTO phase. A simple Linear Discriminant 
+Analysis (LDA)–based classifier was used because it is computationally efficient in real-time prosthesis control 
+and has similar classification performance as other more complex classifiers 
+(Englehart and Hudgins, 2003; Huang et al., 2009).
+-----------------------------------------------------------------------------------------------------------------> unterschiedliche, gleichzeitige Signale |  Linear Discriminant Analysis (LDA)–based classifier | real-time prosthesis control
+
+[...]
+In order to further improve the robustness of the EMG pattern classification system, a sensor fault detection (SFD) 
+module, composed of sensor fault detectors and a system self-recovery strategy, was designed. The block diagram of 
+the module is shown in figure 1. In each analysis window, the detection module received the features extracted from 
+individual EMG signals as input. One sensor fault detector was designed in the detection module based on the 
+distribution of EMG features extracted from each EMG electrode recording. The status of each EMG electrode (either 
+with or without abnormal recordings) was reported to a system self-recovery algorithm that reduced or compensated 
+for the influence of abnormal sensors on the performance of EMG pattern classification.
+-----------------------------------------------------------------------------------------------------------------> EMG Signal -> Feature Extraction -> Fault Detector -> System Self-Recovery Algorithm -- EMG Feature Vector --> LDA Classifier in One Phase | sinnvoller weise sollte der Test + Hypothesen + Parameter möglichst einfach austausch- und erweiterbar sein
+
+Sensor Fault Detector based on Bayesian Decision Rule
+Three types of signal distortions were considered in this study: EMG signal drift and saturation, additional noise 
+in the signal, and variation of EMG magnitude. In addition, magnitude changes were further separated into magnitude 
+increases and magnitude decreases. In this study, the behavior of the associated sensors was considered abnormal 
+when the signal disturbance caused a more than 5% decrease in classification accuracy compared to the accuracy when 
+no signal was disturbed. The function of the sensor fault detector was to detect these abnormal EMG recordings.
+-----------------------------------------------------------------------------------------------------------------> JFI + so könnte ein sensor fault detector arbeiten/entscheiden
+
+[...]
+H0: the recorded signal is normal, H1: the signal is abnormal and contains signal drift and saturation, H2: the 
+signal is abnormal and contains additional noise, H3: the signal is abnormal and contains a signal magnitude 
+increase, and H4: the signal is abnormal and contains a signal magnitude decrease. The five-hypothesis Bayesian 
+risk function is expressed as
+
+ℜ=∑i=0M−1∑j=0M−1PjCij∫Zip(R|Hj)dR,(M=5)
+(2)
+
+-----------------------------------------------------------------------------------------------------------------> konkretere Infos zum sensor fault detector. Genauer, welche Hypothesen für den Test + Formel | weitere Infos + Formeln dann im Paper selbst. kopier jetzt nicht alle, da sind noch ne Menge mehr
+
+[...]
+In this study, signal disturbances causing more than a 5% decrease in classification accuracy were considered 
+abnormal and applied to simulate the distorted signals.
+The rest of the data or simulated data were applied to evaluate the detection performance. The Receiver Operating 
+Characteristic (ROC) curve for each electrode’s fault detector was computed to determine the optimal threshold. To 
+optimize the performance of the detector, the threshold was determined by 
+minimizing (1−sensitivity)2+(1−specificity)2, 
+where the sensitivity of the detector was the proportion of correctly detected abnormal signals out of all of the 
+abnormal cases tested, and the specificity of the detector was the proportion of correctly identified normal 
+signals out of all of the normal EMG signals tested. The optimal operating point on the ROC curve is at the 
+upper-left corner, where both sensitivity and specificity are equally maximized.
+-----------------------------------------------------------------------------------------------------------------> ROC-Kurve + sensitivity & specificity 
+
+System Self-recovery Strategy
+Beyond detection of abnormal sensor behavior, the design of a self-recovery method to “fix” the system in the 
+presence of abnormal EMG signals is essential for ensuring reliable EMG pattern classification.
+-----------------------------------------------------------------------------------------------------------------> System Self-recovery Strategy
+
+[...]
+The system self-recovery method (figure 1) modified the EMG feature vector by eliminating the four EMG features 
+from failed sensors. In addition, the classifier was retrained automatically based on the stored EMG features 
+extracted from the original training data of the remaining “normal” channels. Then the modified EMG feature vector 
+was sent into the retrained classifier as an input for pattern recognition. Note that in real time application this 
+method does not require recollecting the training data, but needs to store the EMG features extracted from the 
+initial training data.
+-----------------------------------------------------------------------------------------------------------------> system self-recovery method, retraining, real-time application, EMG feature vector
+
+[...]
+Signal Baseline Drift and Saturation: One common disturbance of EMG recordings is motion artifacts 
+(Basmajian and De Luca, 1985; Parker et al., 2006), which lead to drifts in EMG magnitude from baseline. Although 
+low-frequency components can be removed by a high-pass filter when the drifts are small, EMG signals can be 
+significantly distorted by considerable drifts that cause the signal magnitude to saturate.
+[...]
+Noise: Thermal noise or coupled environmental noise often affects the surface EMG electrode interface 
+(Lopez et al., 2009; Huigen et al., 2002).
+[...]
+Variation of EMG Signal Magnitude: Shifts in EMG electrode locations, changes to bipolar electrode orientations, 
+and altered inter-pole distances cause significant variations in EMG signal magnitude (Vigreux et al., 1979). 
+This is coupled with frequency-component changes. 
+-----------------------------------------------------------------------------------------------------------------> mögliche Fehlerquellen + Auswirkungen
+
+[...]
+Another study limitation is that there may be more forms of signal disturbances than those simulated in this study.
+ To address this challenge, one of the solutions is to acquire prior knowledge about the major sources and levels 
+of disturbances in our application and then build “abnormal” models based on commonly occurring types of 
+disturbances. Another potential solution is to design a fault detector without specifying the abnormal model. The 
+idea of this method is to build a normal model only; any observation outside of a certain confidence region of the 
+normal model is detected as an abnormal recording. In addition, we did not consider gradual signal disturbances. 
+The proposed system structure is feasible for detecting gradual changes when combined with the theory and methods 
+of trust management (Jsang et al., 2007; Sun et al., 2006). The idea of trust establishment theory is to assign a 
+continuous trust value to each sensor instead of a binary detection result (normal or abnormal). The trust 
+information can be used to indicate gradual changes in signals and reduce the impact of untrustworthy sensors on 
+system performance even before the sensors are detected as abnormal.
+-----------------------------------------------------------------------------------------------------------------> alternative Idee bezüglich fault detector: without specifying the abnormal model. trust establishment theory
+
+[...]
+No frequent retraining session was required, which makes the system easy to apply.
+[...]
+-----------------------------------------------------------------------------------------------------------------> JFI
+
+
+
+
+
+https://rec.bme.unc.edu/files/Huang%20Publications/Integration_of_surface_EMG_sensors_with_the_transfemoral_amputee_socket.pdf
+-----------------------------------------------------------------------------------------------------------------> geht Primär um die Signalbeschaffung und hier um aktuelle Studien und Ideen. Aber hat auch noch paar weitere Infos bezüglich den Signalen und ihrer Verarbeitung
+
+Keywords
+Electromyography, surface electromyography, sensor integration, patient comfort
+
+Here, we discuss a broadband control interface that combines targeted muscle reinnervation, implantable 
+multichannel electromyographic sensors, and advanced decoding to address the increasing capabilities of modern 
+robotic limbs. 
+-----------------------------------------------------------------------------------------------------------------> multichannel EMG sensors + advanced decoding (gerade das advanced decoding hier ist 'neu')
+
+[...]
+More selective signals may be obtained by reducing the electrode active area. The ultimate limit of information 
+extraction from EMG signals is the quantum of the electrophysiological muscle activation, i.e., the motor unit 
+action potential (Figure 2). The associated neural information is that of a single efferent nerve fiber. 
+-----------------------------------------------------------------------------------------------------------------> quantum of the electrophysiological muscle activation, i.e., the motor unit action potential
+
+[...]
+ The principle of spatial sampling with small individual electrodes has been extensively applied for surface EMG 
+systems (Hahne et al., 2012; Muceli and Farina, 2012; Ison et al., 2015) and currently this technology allows the 
+decoding of the neural drive to muscles by blind source separation methods (Farina and Holobar, 2016). Recently, 
+as a proof of concept, these systems have been used to decode the neural activation of motor nerve fibers following 
+TMR and the motor neuron behavior has been mapped into control signals for prostheses 
+(Kapelner et al., 2015; Farina et al., 2017). 
+It was shown that this approach at the motor unit level is theoretically superior to classic pattern recognition of 
+the interference EMG using global parameters in TMR patients (Farina et al., 2017). As we discussed previously 
+(Farina et al., 2017), the proposed approach, that has been proven with non-invasive high-density EMG electrode 
+grids, could be translated to implanted grids.
+-----------------------------------------------------------------------------------------------------------------> decoding of the neural drive to muscles by blind source separation methods | decode the neural activation of motor nerve fibers -> the motor neuron behavior has been mapped into control signals for prostheses
+
+[...]
+Moreover, the decoding into individual motor units should be implemented with algorithms running in 
+real-time and embedded in wearable electronics. 
+-----------------------------------------------------------------------------------------------------------------> !!! running in real-time and embedded !!!
+
+[...]
+However, we have recently proposed a method for real-time decomposition of single-channel intramuscular EMG 
+(Karimimehr et al., 2017) that can be extended to multiple channels.
+
+Karimimehr, S., Marateb, H. R., Muceli, S., Mansourian, M., Mananas, M. A., and Farina, D. (2017). 
+A Real-time method for decoding the neural drive to muscles using single-channel intra-muscular EMG recordings. 
+Int. J. Neural Syst. 27:17500253. doi: 10.1142/S0129065717500253
+https://www.worldscientific.com/doi/pdf/10.1142/S0129065717500253
+-----------------------------------------------------------------------------------------------------------------> method for real-time decomposition of single-channel intramuscular EMG (Karimimehr et al., 2017) https://www.worldscientific.com/doi/pdf/10.1142/S0129065717500253
+
+[...]
+The availability of several recordings of muscle fiber electrical activities theoretically allows the separation 
+of the sources (discharge timings of motor neurons) from the convolutive mixing matrix. This can be performed by 
+blind source separation methods that exploit, e.g., the sparseness property of the sources (Farina and Holobar, 2016).
+An assumption of these methods is that the number of observations is greater than the number of sources and this 
+imposes a high spatial sampling, as discussed above. Blind separation of EMG signals has been demonstrated and 
+validated in the past decade (Holobar and Farina, 2014) and has been tested on both invasive and non-invasive 
+muscle recordings (Negro et al., 2016). Nonetheless, the conditions in which these methods have been applied are 
+mainly constrained laboratory tests, during muscle contractions at constant or slow-varying force and in isometric 
+conditions (Farina and Holobar, 2016). The extension of these methods to more general conditions is challenging 
+because of the strong non-stationarity of the sources, artifacts, and brief activation intervals. These problems 
+are further exacerbated by the need for online separation, which imposes constraints on the amount of data 
+available for each processing intervals.
+-----------------------------------------------------------------------------------------------------------------> blind source separation methods | 
+
+[...]
+Another set of limitations is related to the online robust processing of the EMG for extracting the constituent 
+sources, in non-stationary conditions, during brief contractions, and with limited processing delay 
+(within few hundreds ms).
+-----------------------------------------------------------------------------------------------------------------> hier ein weiterer möglicher Ansatz?
+
+
+
+******************************************************************************************************************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************************************************************************************************************************************
+https://www.worldscientific.com/doi/pdf/10.1142/S0129065717500253
+******************************************************************************************************************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************************************************************************************************************************************
+******************************************************************************************************************************************************************************************************************************************************************************************************************
+
+https://www.worldscientific.com/doi/pdf/10.1142/S0129065717500253
+Keywords: Neural decoding; electromyography; EMG Decomposition; prosthetic control; online algorithms.
+
+[...]
+method for fully automatic and real-time intramuscular EMG (iEMG) decomposition. The method is based on online 
+single-pass density-based clustering and adaptive classification of bivariate features, using the concept of 
+potential measure.
+-----------------------------------------------------------------------------------------------------------------> verwendete Methode (JFI)
+
+[...]
+The time cost for processing each 200 ms iEMG interval was 43 ± 16
+(21–97) ms. However, computational time generally increases over time as a function of frames/signal
+epochs. Meanwhile, the incremental accuracy defined as the accuracy of real-time analysis of each signal
+epoch, was 74 ± 18% for epochs recorded after initial one second.
+-----------------------------------------------------------------------------------------------------------------> möglicher Ansatz?
+
+[...]
+The electrical activity of a muscle — electromyogram (EMG) — is the algebraic sum of the muscle fiber action 
+potentials activated by the neural activation of the innervating motor neurons. A motor neuron and the muscle 
+fibers it innervates is the smallest functional voluntary unit by which the nervous system controls the movements
+and is called motor unit. The neural command from motor neurons conveying information about the control of muscle 
+voluntary contractions is often referred to as the neural drive to muscle.[2] The neural drive to muscles can be 
+identified from EMG signals
+-----------------------------------------------------------------------------------------------------------------> was ist EMG
+
+[...]
+The automatic decomposing of EMG signals was pioneered by LeFever and De Luca.[15,16] Subsequently, several other 
+EMG decomposition algorithms have been developed. For example, Stashuk proposed a quantitative approach for 
+decomposing EMG signals.[17] A wavelet-based feature extraction for multichannel EMG decomposition was introduced 
+by Zennaro and collaborators.[18] Breakthroughs in EMG decomposition have been the EMGLAB software for decomposing 
+intramuscular EMG signals which is freely available online[19] and two commercial methods for decomposing surface 
+EMG signals.[20,21] Recently single-channel intramuscular EMG signal decomposition methods have been 
+proposed,[22,23] as well as multichannel approaches.[24,25]
+-----------------------------------------------------------------------------------------------------------------> EMG decomposition methods & algorithms
+
+[...]
+The resulting EMG signals are usually processed as global interference signals for extracting their amplitude as 
+a crude estimate of nerve activity.[29–32] However, recently, it has been proposed that the EMG signals from 
+reinnervated muscles can be decomposed so that the efferent neural information of the innervating nerves can be
+extracted directly.[2,27] In this way, a neural interface is established which provides the same information as if 
+the nerve would be directly interfaced with neural intrafascicular electrodes. This approach has been previously 
+discussed as a theoretical possible way to control active prostheses[33] and is based on a strong evidence of 
+direct association between the neural drive to muscles estimated from EMG decomposition and muscle force.[34]
+Nonetheless, for this approach to be feasible in practice, the EMG decomposition needs to be performed in real-time, 
+whereas, all current decomposition methods are in fact time consuming (for instance, the run-time of the 
+state-of-the art decomposition program PD II for different muscles and force levels are listed in Table 1 in).[35] 
+Actually EMG decomposition is in most cases not even fully automatic but requires a long interaction with expert 
+operators. These restrictions are not acceptable for controlling active prostheses which requires a maximum 
+processing delay of few hundreds milliseconds.[36] 
+-----------------------------------------------------------------------------------------------------------------> 'new' decomposition that needs real-time computation. Ist noch nicht fully automatic (study proposes an innovative method for fully automatic and online intramuscular EMG decomposition)
+
+[...]
+The proposed recursive algorithm uses 200 ms iEMG signal epochs for the analysis. The frame size was selected as to 
+be suitable for prosthesis control.[36,40] The input signal frame is passed to the first-order high-pass 
+Butterworth filter with the cut-off frequency of 1 kHz in the forward and reverse direction.
+-----------------------------------------------------------------------------------------------------------------> erste Infos zum Algorithm. u.a. input signal frame is passed to the first-order high-pass Butterworth filter
+-----------------------------------------------------------------------------------------------------------------> um Algorithm anzuschaun, siehe Flowchart auf S.5 (Fig. 1. The main flowchart of the proposed online intra-muscular EMG signal decomposition algorithm. AcS: active segment; CDR: cumulative discharge rate)
+
+                        einzelne Schritte (größer zusammengefasste Kategorien):
+Signal Conditioning  -->  Segmentation  -->  Feature Extraction  -->  Online clustering and classification
+
+
+[...]
+The pseudo-correlation function was implemented in C++ with Optivec vectorization package[46] for vector and matrix 
+operations (http://www.optivec.com/).
+-----------------------------------------------------------------------------------------------------------------> ach schau an, die haben C++ verwendet :D
+
+[...]
+The analysis was performed on an Intel Core i7 2.4 GHz CPU with 4 GB of RAM. The algorithm was mainly implemented 
+in MATLAB 8.2 (The MathWorks Inc., Natick, MA, 2013).
+-----------------------------------------------------------------------------------------------------------------> Infos zum setup: CPU, ...
+
+[...]
+An attempt was made to implement resolving superimposed MUAPs. The resolving algorithms proposed by Florestal 
+et al.[45] and Marateb and McGill46 were implemented in Vectorized C++.
+Although the decomposition accuracy significantly increased (an average increase of 19%), the average running time 
+was 287 ms for a 200 ms epoch. Thus, it was not practical in real-time implementation.
+-----------------------------------------------------------------------------------------------------------------> offenes Problem mit run-time
+
+
+
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3551496/
+https://code.google.com/archive/p/lynxmove-qt/downloads
+-----------------------------------------------------------------------------------------------------------------> An open-source and cross-platform framework for Brain Computer Interface-guided robotic arm control
+
+
+
+
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5505040/
+
+Keywords: Myoelectric prosthesis, Myoelectric control, Inertial measurement unit, Surface electromyography, Hand motion classification
+-----------------------------------------------------------------------------------------------------------------> weiterer neuer Ansatz: Inertial measurement unit (IMU) bzw. inertial measurements (IMs) (?trägheitsmessung?)(such as gyroscopes and magnetometers;)
+
+[...]
+The sEMG signal is inherently noisy and thus, not a robust source of input information for prosthetic systems [12]. 
+This is especially true for altered conditions such as sweat, fatigue, and electrode displacement [11]. Therefore, 
+it is imperative to move towards multi-modal control solutions.
+-----------------------------------------------------------------------------------------------------------------> da sEMG noisy,... -> multi-modal control solutions
+
+[...]
+Following Gijsberts et al. [22], power line interference was suppressed from the myoelectric signals by applying 
+a Hampel filter. The post-hoc relabeling procedure that was described in the same study was used to identify and 
+refine the exact stimuli timings for each subject and trial in order to avoid introducing label-related noise in 
+the classifiers. The cause of this type of noise is the natural variability introduced when subjects replicate 
+movements instructed to them on a screen (i.e. onset delays, variability in trial lengths, etc.).
+-----------------------------------------------------------------------------------------------------------------> power line interference -> Hampel filter  |  post-hoc relabeling procedure
+
+[...]
+A finite-state machine implementation was used for the real-time control of the prosthetic hand. A movement 
+predicted by the classifier was triggered only if the most recently performed movement had terminated execution. 
+To determine movement execution termination, the hand’s motor current readings were constantly monitored and 
+compared to a fixed threshold. In addition, a control command was triggered only when it was predicted with high 
+confidence, in other words when the posterior probability of the corresponding class exceeded a threshold. The 
+probability threshold was set a priori to θ=0.995. For the real-time experiment, signal acquisition, pre-processing 
+and control of the prosthetic hand were implemented in C++ and integrated into the Robot Operating System (ROS) [24]. 
+The communication between ROS and the hand was achieved via the CANBUS protocol.
+-----------------------------------------------------------------------------------------------------------------> Infos darüber wie die Prothese 'gesteuert' wird/wurde. (finite-state machine implementation, Robot Operating System (ROS), CANBUS protocol)
+
+Myoelectric and IM signals were synchronised via linear interpolation. By using a shifting window approach, 
+four sEMG features were extracted from each channel, namely the mean absolute value (MAV), waveform length (WL), 
+4th-order auto-regressive (AR) coefficients and log-variance (LogVar). The selection of these features was based 
+on previous studies demonstrating their efficacy in decoding hand motion intention [25–27]. Bearing in mind the need 
+for low computational requirements during real-time control, we only considered time-domain (TD) sEMG features [28]. 
+The length of the shifting window was set to 256 ms and the increment to 50 ms (80% overlap).
+-----------------------------------------------------------------------------------------------------------------> signals synchronised via linear interpolation; using a shifting window approach -> welche features wurden extrahiert (MAV, WL, AR, LogVar)
+
+[...]
+In order to match EMG features, IM data were also binned in 256 ms windows by extracting the mean value (MV) of the 
+signals within the processing window. The total number of features contributed by each sensor was thus 16 (7 EMG, 9 IM features.)
+-----------------------------------------------------------------------------------------------------------------> wie IM Daten innerhalb eines Fensters extrahiert  |  Gesamtzahl Features je Sensor (16)
+
+[...]
+-----------------------------------------------------------------------------------------------------------------> nachfolgend wird im Text genauer beschrieben wie die Daten verarbeitet werden -> columns of the design matrix (i.e. input features) were standardised by subtracting the mean and dividing by standard deviation [...] For the real-time experiment, mean and standard deviation vectors for each subject were estimated on [...] um nicht schlicht mehrere Absätze vollständig hier zu kopieren, verweise ich mal auf das Paper ;)
+[...]
+
+For movement intent decoding from myoelectric and IM data, we employed a linear discriminant analysis (LDA) 
+classifier. Discriminant analysis is a family of supervised dimensionality reduction algorithms for identifying 
+feature projections that maximise class separability. [...]
+In the context of myoelectric control, LDA and its variants have been extensively used, since they can achieve 
+high decoding performance with minimal requirements [3–5, 32].
+[...]
+This feature was particularly important for our paradigm where confidence-based classification rejection was 
+deployed at the final control stage. Another strong advantage of LDA is its efficiency at test time; both time 
+and space complexities scale linearly with the input feature dimensionality [33].
+-----------------------------------------------------------------------------------------------------------------> kanns doch nicht lassen, zumindest die erstmal besonders erscheinenden Punkte nochmal seperat zu erwähnen -> linear discriminant analysis (LDA) classifier
+
+******
+quasi zusammenfassung bzw überblick:
+Sequential forward sensor selection (SFSS)
+One of the main aims of this study was to assess whether the use of inertial data measured with the same sensor packs that record EMG signals could help reduce the number of channels required to achieve high-level myoelectric control. Therefore, we investigated whether the use of an optimally selected subset of EMG-IM sensors could achieve the same level of decoding performance attained by the decoders when all available sensors were used.
+
+A sensor selection method was developed which was based on the classic sequential forward feature selection algorithm [1, 34, 35]. Our adapted algorithm was initialised with an empty sensor set. In each iteration, the sensor which yielded the highest performance improvement was added to the pool. Decoding performance was assessed by including all input signals from the associated sensor, in other words 7 sEMG and 9 IM features. To increase the robustness of our method, cross-validation was used in each iteration and the sensor selection decision was based on a majority vote across the cross-validation folds. For consistency, the CA metric was used for assessing decoding performance in each step. The algorithm terminated execution once all sensors were included in the set, in other words when all available sensors were ranked according to their relative predictive power. For both the offline and real-time experiments we selected those sensors the addition of which yielded an improvement in CA larger than 1%. The sensor rankings varied across subjects, therefore a different subset was used for each subject. The size of the subset also varied across subjects. For the real-time experiment, sensor selection was performed by using the training data only and the sensor subset for each participant was kept fixed throughout the testing phase.
+******
+
+[...]
+For the amputee participant, the SFSS algorithm yielded three sensors only and, remarkably, the sEMG-IM subset 
+condition (IV) achieved the best overall performance with 83% CR and an average CT of less than 40 s. To the 
+best of our knowledge, efficient real-time prosthetic control by an amputee subject with as few as three sensors 
+has not been previously reported.
+
+This work is a proof of principle for integrating IMs in myoelectric control. Throughout our study, we used raw 
+sensor values from IMUs which measured proper acceleration (accelerometer), angular velocity (gyroscope) and 
+magnetic field (magnetometer). An alternative would be to perform sensor fusion and work with a different 
+representation, such as quaternions or Euler angles [42].
+-----------------------------------------------------------------------------------------------------------------> teil vom Ergebnis + throughout our study, we used raw sensor values from IMUs which measured proper acceleration (accelerometer), angular velocity (gyroscope) and magnetic field (magnetometer)
+
+
+
+
+
+********* möglicher Bonus (Feedback) ********* 
+**********************************************
+https://www.biorxiv.org/content/biorxiv/early/2018/02/09/262741.full.pdf
+---> A closed-loop hand prosthesis with simultaneous intraneural tactile and position feedback
+-----------------------------------------------------------------------------------------------------------------> insg. gehts hierbei zwar Primär darum wie man 'sensorisches' Feedback an den Nutzer geben kann. Also nochmal nen Schritt weiter, aber auch hier ist der Aufbau + Methodik der Steuerung etc. beschrieben. Daher + da schlicht für weitere Recherchen und auch wenn noch etwas Zusatz (Feedback mit dazu) gefragt wärde interessant)
+
+
+Bidirectional setup and prosthesis control. For the functional tasks, subjects were fitted
+with a custom bidirectional research prosthesis, allowing control of hand opening and closing
+by processing surface electromyographic (sEMG) signals, and providing sensory feedback by
+means of electrical stimulation of the peripheral nerves. A robotic hand with tension force
+sensors integrated within each digit (IH2 Azzurra, Prensilia, Italy) was controlled using a
+custom, multithreaded C++ software running on a RaspberryPi 3 single board computer
+(Raspberry Pi Foundation, UK). A recording and stimulating device (Neural Interface
+Processor, Ripple, LLC, US) was also connected to the central single board computer,
+acquiring sEMG data from two or four bipolar channels, and providing stimulation outputs to
+the four neural electrodes. Custom moulded sockets were built with integrated screws to
+easily fix the robotic hand on the end. Holes were drilled to allow for the placement of sEMG
+electrodes on the stump.
+For prosthesis control, a simple 3 state (open, close, rest) threshold controller was used for
+Subject 1, and Subject 2 used a KNN (k=3) classifier with 3 classes31
+. Two or four bipolar
+channels of sEMG were acquired from forearm residual muscles (for Subject 1 and 2
+respectively), where palpation was used to place the electrodes in the optimal positions. The
+sEMG data were acquired with a sampling frequency of 1 kHz, and filtered using an IIR filter
+with 4th order Butterworth characteristics, between 15 and 375 Hz, as well as a notch filter to
+remove 50 Hz power hum. For the threshold controller, the mean absolute value (MAV) was
+computed for each channel, and a threshold was set manually to indicate when the hand
+should be opened or closed. the amplitude of the sEMG signal (MAV) controlled hand
+actuation speed (proportional control). For the KNN classifier, the waveform length was
+computed over a window of 100ms for each channel and fed to the classifier every 100ms.
+The decoded class was used to send open or close commands to the prosthesis
+-----------------------------------------------------------------------------------------------------------------> multithreaded C++ software running on a RaspberryPi 3 single board computer (Raspberry Pi Foundation, UK)  |  prosthesis control  |  sampling frequency of 1 kHz  |  IIR filter with 4th order Butterworth characteristics, between 15 and 375 Hz, as well as a notch filter to remove 50 Hz power hum  |  threshold controller -> mean absolute value (MAV)
+
+
+
+
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5515902/
+---------------> Aufgenommen, da auch noch generell interessant. Hier gehts aber erstmal mehr darum mittels Transplantation von Nerven mehr oder bessere Signale zu bekommen + dann eigentlich nur noch mittels iEMG Signalen
+
+
+Decomposition of multichannel EMG signals
+The availability of several recordings of muscle fiber electrical activities theoretically allows the separation 
+of the sources (discharge timings of motor neurons) from the convolutive mixing matrix. This can be performed by 
+blind source separation methods that exploit, e.g., the sparseness property of the sources (Farina and Holobar, 2016). 
+An assumption of these methods is that the number of observations is greater than the number of sources and this 
+imposes a high spatial sampling, as discussed above. Blind separation of EMG signals has been demonstrated and 
+validated in the past decade (Holobar and Farina, 2014) and has been tested on both invasive and non-invasive muscle 
+recordings (Negro et al., 2016). Nonetheless, the conditions in which these methods have been applied are mainly 
+constrained laboratory tests, during muscle contractions at constant or slow-varying force and in isometric 
+conditions (Farina and Holobar, 2016). The extension of these methods to more general conditions is challenging 
+because of the strong non-stationarity of the sources, artifacts, and brief activation intervals. These problems 
+are further exacerbated by the need for online separation, which imposes constraints on the amount of data available 
+for each processing intervals.
+-----------------------------------------------------------------------------------------------------------------> aufn ersten Blick brauchbare bzw. zumindest nochmal näher zu betrachtende Infos
+
+[...]
+Recent neuro-histological analyses of peripheral nerves indicate that an average of approximately 25,000 efferent 
+nerve fibers control the upper extremity function and thereof only approximately 1,800 motor nerve fibers ultimately 
+control intrinsic hand function (Gesslbauer et al., in review). 
+-----------------------------------------------------------------------------------------------------------------> coole Info so nebenbei ;-)
+[...]
+Considering the relatively small number of motor nerve fibers innervating the intrinsic musculature of the hand 
+(only ~1,800), it is in principle possible to decode the full neural drive to the intrisic hand musculature with 
+high resolution multichannel electrode systems. Thereby, the neural drive of a multi-fascicular (multi-modal) nerve 
+could be identified in a single targeted muscle and the entire neural drive to the hand musculature could be decoded 
+from several targeted muscles (Figure ​(Figure22).
+-----------------------------------------------------------------------------------------------------------------> noch bissl mehr nice Infos. (kurzer Gedanke: wie viele iEMGs braucht man um die 1800 Signale sicher unterscheiden zu können? sollten auf alle Fälle merklich weniger als 1800 sein, da die unterschiedlichen Signale ja jeweils an anderen Stellen noch unterschiedlich stark gemessen werden können, man so quasi aus mehrern Messtellen schon eine genaue 'Position' errechnen kann. einfachste form davon wohl die triangulation)
+
+[...]
+Nonetheless, several challenges remain for the translation of these advances into clinical prosthetic systems. 
+The main difficulties relate to the integration of tens to hundreds of recording sites in implanted EMG sensors and 
+the wireless transmission of the signals on a large bandwidth, with high signal-to-noise ratio and with limited 
+artifacts. Moreover, the recordings should be powered and stable over time for several years. Another set of 
+limitations is related to the online robust processing of the EMG for extracting the constituent sources, in 
+non-stationary conditions, during brief contractions, and with limited processing delay (within few hundreds ms). 
+Once decoded, the sources need to be automatically associated to DoFs which is also a challenge.
+-----------------------------------------------------------------------------------------------------------------> (offene) challenges: integration of tens to hundreds of recording sites  |  transmission of the signals on a large bandwidth  |  transmission with high signal-to-noise ratio and with limited artifacts  |  limited processing delay
+
+
+
