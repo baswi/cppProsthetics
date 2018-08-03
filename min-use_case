@@ -1,0 +1,5 @@
+1. read/load the signal data (raw and clean data, so no noice)
+2. just pass it through the filter, since there is no noice
+3. check if the signal reaches or crosses a specified threshold for a specified (min) duration
+4. this leads to a command to the protheses, depending on the current position (if open -> cmd:close || if closed -> cmd:open)
+5. protheses (real or simulated) perfoms the motion
