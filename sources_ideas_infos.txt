@@ -5,6 +5,8 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5505040/
 https://openbionicslabs.com/
 https://github.com/Open-Bionics
 
+http://www.emglab.net
+
 
 ** muss noch gesichtet werden **
 robot-simulators:
@@ -627,5 +629,74 @@ non-stationary conditions, during brief contractions, and with limited processin
 Once decoded, the sources need to be automatically associated to DoFs which is also a challenge.
 -----------------------------------------------------------------------------------------------------------------> (offene) challenges: integration of tens to hundreds of recording sites  |  transmission of the signals on a large bandwidth  |  transmission with high signal-to-noise ratio and with limited artifacts  |  limited processing delay
 
+
+
+
+
+
+http://www.emglab.net/emglab/Tutorials/EMGDECOMP.html
+[...]
+The nervous system activates the motor unit by sending electrical impulses along the motoneuron axon. Each impulse 
+causes the fibers to twitch, and when the impulses come at a fast enough rate---about fifteen per second---the 
+twitches fuse to produce a steady force.
+-----------------------------------------------------------------------------------------------------------------> #impulses to produce a steady force in the muscle
+The nervous system controls the force of a muscular contraction by turning motor units on and off (recruitment) 
+and by modulating their discharge rates (rate coding). A muscle's motor units are recruited in a fixed order from 
+smallest to largest (the "size principle").
+-----------------------------------------------------------------------------------------------------------------> recruitment  |  rate coding  |  the size principle
+During a sustained contraction, discharge rates typically range from ten to twenty-five discharges per second. 
+-----------------------------------------------------------------------------------------------------------------> sustained contraction (10 - 25 discharges/sec)
+
+[...]
+When a motor unit discharges, the electrical potentials from all the muscle fibers of the motor unit sum together 
+to produce a compound potential called the motor-unit action potential (MUAP). MUAPs typically last from one to 
+several milliseconds, although their exact size and shape depend on the where the electrode is located with respect 
+to the fibers. MUAPs from different motor units tend to have different shapes, while MUAPs recorded by the same 
+electrode from the same motor unit have more or less the same shape from discharge to discharge.
+-----------------------------------------------------------------------------------------------------------------> what is a MUAP  |  how to distinguish MUAPs
+
+[...]
+The EMG signal will consist of two distinct trains of MUAPs. Most of the MUAPs will be clearly recognizable. 
+Occasionally, though, the two motor units may discharge at nearly the same time, and the two MUAPs will overlap 
+one another. This is called a superposition.
+-----------------------------------------------------------------------------------------------------------------> what is a superposition
+
+[...]
+Surface electrodes have the advantage that they are completely non-invasive, but the limitation that they can only 
+sample superficial muscles. Since surface electrodes are far away from the muscle fibers, the MUAPs they record are 
+small in amplitude and tend to all look alike. Electrode arrays are often necessary in order to obtain decomposable 
+signals.
+-----------------------------------------------------------------------------------------------------------------> sEMG MUAPs are small in amplitude and tend to look alike -> electrode arrays
+
+[...]
+The process of sorting out the individual MUAP trains in an EMG signal is called EMG decomposition
+-----------------------------------------------------------------------------------------------------------------> decomposition
+[...]
+It involves three main steps.
+First, the shapes of the different MUAPs must be determined. This can be done by sorting the spikes in the signal 
+on the basis of their shapes. Sorting will reveal clusters of spikes with similar shapes as well as some spikes 
+with shapes that are different from all the others. Spikes with similar shapes are likely to be different 
+discharges from the same motor units, while spikes with unique shapes are likely to be chance superpositions. In 
+this way it is usually possible to work out the number of different MUAPs and to establish templates of their 
+shapes.
+-----------------------------------------------------------------------------------------------------------------> 1. Step: determine shapes + clustering
+The second step is to try to determine the source of every spike in the signal. Many spikes can be easily 
+recognized as a discharge of one motor unit or another. The constituents of superpositions can be more difficult 
+to work out. If the overlap is only slight, the constituents might still be recognizable. If the overlap is 
+complete it might be necessary to try different alignments of the templates to see which gives the closest fit. The 
+motor-unit discharge patterns can also be used to help determine which motor units are involved. Since these 
+patterns tend to be fairly regular, the approximate timing of a particular discharge can be estimated from the 
+timing of the preceding or following one.
+-----------------------------------------------------------------------------------------------------------------> 2. determine the source of every spike  |  beware of superpositions  |  the approximate timing of a particular discharge can be estimated from the timing of the preceding or following one.
+The final step in decomposition is to check the results. If there are gaps or uneven intervals in any of the 
+discharge patterns, or if there are spikes in the signal that have not been accounted for, then the decomposition 
+is probably not correct. On the other hand, if all the activity in the signal has been adequately accounted for by 
+a set of motor units with physiologically realistic discharge patterns, then there is a good chance that the 
+decomposition is substantially complete and correct.
+-----------------------------------------------------------------------------------------------------------------> 3. check the results
+
+
+
+http://www.uni-kassel.de/eecs/fileadmin/datas/fb16/Fachgebiete/NT/Diplom/Diplom2_Weitz.pdf
 
 
