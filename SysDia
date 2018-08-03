@@ -26,15 +26,14 @@ here the [clustering -> ....]-part is what is happening inside of the Decomposit
    Signal    |        | ------------> | Decomposition | -----------> | Mapping | ------------> | Move |
 ------------>| filter |   Signals     |               |              |         |  API-command  |      |
               --------                 ---------------                ---------                 ------
-             (                       /                  ↖               ↗	  	)
-             (                      /                     \			       /  		)
-             (   			            ↙                        \ 		      /   		)
-             (   	   ------------        -----------  	    -------------		  )
-             (      |            |      | determine | 	   | correctness |		)
-             (      | Clustering | ---> |           | ---> |             |		)
-             (      |            |      |  sources  | 	   |    check    |		)
-             (       ------------        -----------	 	    -------------		  )
-
+             (                       /                  ↖               ↗     )
+             (                      /                    \             /      )
+             (                    ↙                       \           /       )
+             (       ------------        -----------        -------------     )
+             (      |            |      | determine |      | correctness |    )
+             (      | clustering | ---> |           | ---> |             |    )
+             (      |            |      |  sources  |      |    check    |    )
+             (       ------------        -----------        -------------     )
 
 
 
