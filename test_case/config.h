@@ -8,3 +8,7 @@
 #include <utility>
 #include <sstream>
 #include <iterator>
+#include <vector>
+#include <deque>
+#include <algorithm>
+#include <numeric>
