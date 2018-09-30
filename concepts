@@ -1,0 +1,72 @@
+noiseFilter
+
+
+Type requirements: ?? compareable ??
+
+Input:
+unfiltered Signal(s) ?? (numerical) ?? (stream)
+Output:
+filtered Signal(s) ?? (numerical) ??   (stream || vector)
+
+Return value:
+
+
+--------------------------------------------------------------------
+|  Expression  |  Return type  |  Return value  |  Post-conditions |
+--------------------------------------------------------------------
+|              |               |                |                  |
+--------------------------------------------------------------------
+
+
+
+******************************************************************************************
+// one concept for every part of the decomposition? or just decomposer & [analyser + mapping]
+
+decomposer
+
+Type requirements:
+
+Input:
+filtered Signal(s) ?? (numerical) ??  (stream || vector)
+Output:
+MUAP-trains 
+
+Return value:
+
+
+--------------------------------------------------------------------
+|  Expression  |  Return type  |  Return value  |  Post-conditions |
+--------------------------------------------------------------------
+|              |               |                |                  |
+--------------------------------------------------------------------
+
+
+******************************************************************************************
+Analyser
+
+
+Type requirements: comparable, sortable
+
+Input:
+MUAP-trains
+Output:
+actuator input
+
+Return value:
+
+a, b  Analyser
+d     DOF
+--------------------------------------------------------------------
+|  Expression  |  Return type  |  Return value  |  Post-conditions |
+--------------------------------------------------------------------
+|   a == b     |     bool      |                |                  |
+--------------------------------------------------------------------
+|   a != b     |     bool      |   !(a == b)    |                  |
+--------------------------------------------------------------------
+|   a < b      |     bool      |   a.d < b.d    |                  | //compare via #DOF
+--------------------------------------------------------------------
+|   a > b      |     bool      |   a.d > b.d    |                  |
+--------------------------------------------------------------------
+
+
+******************************************************************************************

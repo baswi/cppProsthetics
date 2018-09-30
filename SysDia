@@ -1,31 +1,31 @@
 
 1. single sEMG-signal/electrode/channel
 
-              --------                 ---------------                ---------                 ------
-   Signal    | noice  |   filtered    |               |  MUAP-train  |         |  prothetic    |      |
------------->|        | ------------> | Decomposition | -----------> | Mapping | ------------> | Move |
-             | filter |    Signal     |               |              |         |  API-command  |      |
-              --------                 ---------------                ---------                 ------
+              --------                 ---------------                ---------                 ----------
+   Signal    | noice  |   filtered    |               |  MUAP-train  |         |   actuator    |          |
+------------>|        | ------------> | Decomposition | -----------> | Mapping | ------------> | Actuator |
+             | filter |    Signal     |               |              |         |    input      |          |
+              --------                 ---------------                ---------                 ----------
 
 
 
 2. multiple sEMG-signals/electrodes/channels
 
 
-   Signal     --------                 ---------------                ---------                 ------
------------->| noice  |   filtered    |               | MUAP-trains  |         |  prothetic    |      |
-   Signal    |        | ------------> | Decomposition | -----------> | Mapping | ------------> | Move |
------------->| filter |   Signals     |               |              |         |  API-command  |      |
-              --------                 ---------------                ---------                 ------
+   Signal     --------                 ---------------                ---------                 ----------
+------------>| noice  |   filtered    |               | MUAP-trains  |         |   actuator    |          |
+   Signal    |        | ------------> | Decomposition | -----------> | Mapping | ------------> | Actuator |
+------------>| filter |   Signals     |               |              |         |    input      |          |
+              --------                 ---------------                ---------                 ----------
 
 
 
 here the [clustering -> ....]-part is what is happening inside of the Decomposition
-   Signal     --------                 ---------------                ---------                 ------
------------->| noice  |   filtered    |               | MUAP-trains  |         |  prothetic    |      |
-   Signal    |        | ------------> | Decomposition | -----------> | Mapping | ------------> | Move |
------------->| filter |   Signals     |               |              |         |  API-command  |      |
-              --------                 ---------------                ---------                 ------
+   Signal     --------                 ---------------                ---------                 ----------
+------------>| noice  |   filtered    |               | MUAP-trains  |         |   actuator    |          |
+   Signal    |        | ------------> | Decomposition | -----------> | Mapping | ------------> | Actuator |
+------------>| filter |   Signals     |               |              |         |    input      |          |
+              --------                 ---------------                ---------                 ----------
              (                       /                  ↖               ↗     )
              (                      /                    \             /      )
              (                    ↙                       \           /       )
