@@ -20,10 +20,10 @@ int main() {
 
 	prosthetics::get_signal::emg_signal input("formated_signal.txt");
 	prosthetics::CandC::signalControl control(input);
-	// both in microseconds (0,000001 s)
-	size_t frameSize = 500;
+	// both in microseconds (0,000001 s) (200 Hz = 5 ms(period))
+	size_t frameSize = 5000;
 	size_t runTime = 1200000;
-	int threshold = 2000;
+	int threshold = 500;
 	size_t frames = 4;
 
 	control.testRun(frameSize, runTime, threshold, frames);
