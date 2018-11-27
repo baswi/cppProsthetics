@@ -2,10 +2,19 @@
 
 namespace prosthetics {
 
+
+
+
 	template<class pCtrl> void run(pCtrl p) {
+		for(singleProstheticStream : prostheticStreams)
+		{
+			prosthetics::run(singleProstheticStream);
+		}
 		// idea: 
 		// MOVE << actuator << decomposer/analyser << noiseFilter << signalSources
 	}
+
+
 
 	// ??  global operator <<  ??
 	// idea: the whole processing chain is completely based on the signalType and this signal is passed through every part
@@ -22,7 +31,35 @@ namespace prosthetics {
 //??	,  class decomposer_analyser
 //??	,  class actuator
 	>
-	struct prosthetic_control;
+	
+	// ?fix # of Streams? -> static mem
+	// template<int N=1>
+	class prosthetic_control{
+	// let user create Streams and pass via constructor
+	// ||
+	// add Streams to Streampool via MembFunct
+		// ?good idea to do it like vector of pointer to ...?
+        private:
+        using streamPool = std::vector<prosStreams>;
+
+	public:
+	//Constructors
+        //TODO me: not finished
+        prosthetic_control(streamPool& prosStreams)
+	: _prosStreams(prosStreams)
+	{}
+
+
+	template<class prostheticSigStream>
+	decltype(auto) addStream(prostheticSigStream&& pStream)
+	{
+		//TODO me: add pStream to _prosStreams -> use STL!
+	}
+
+	private:
+           streamPool _prosStreams;	
+        }
+
 	
 
 } // namespace prosthetics

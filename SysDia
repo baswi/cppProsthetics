@@ -36,6 +36,32 @@ here the [clustering -> ....]-part is what is happening inside of the Decomposit
              (       ------------        -----------        -------------     )
 
 
+3. single or multiple signalSources (even different Sourcetypes possible)
 
+(maybe locality of some [eg same Type] Streams is relevant with regard to perfomance? idea for higher lvl implementations?)
 
+   Signal      ------------                 -------------------------                  ----------                  ----------
+------------> | prosthesis |               |                         |                | Analyser |    actuator    |          |
+   Signal     |            | ------------> | ProstheticSignalStreams | -------------> |    /     |  ------------> | Actuator |
+------------> |  control   |               |                         |                | Mapping  |     input      |          |
+               ------------                 -------------------------                  ----------                  ----------
+                                             /                                            ↗ 
+                                            /                                            /
+                                          ↙                                             /
+                             ---------------------------------------------------------------------
+                             ( --------                 ---------------                --------- )
+                             (| noice  |   filtered    |               | MUAP-trains  |  sort   |)
+                             (|        | ------------> | Decomposition | -----------> |   of    |)
+                             (| filter |   Signals     |               |              | Analyse |)
+                             ( --------                 ---------------                --------- )
+                             ((                       /                  ↖               ↗     ) )
+                             ((                      /                    \             /      ) )
+                             ((                    ↙                       \           /       ) )
+                             ((       ------------        -----------        -------------     ) )
+                             ((      |            |      | determine |      | correctness |    ) )
+                             ((      | clustering | ---> |           | ---> |             |    ) )
+                             ((      |            |      |  sources  |      |    check    |    ) )
+                             ((       ------------        -----------        -------------     ) )
+                             ---------------------------------------------------------------------
 
+ 
